@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prac Project 3</title>
+</head>
+<body>
+    <h1>Widget List</h1>
+    <hr>
+    {% if widgets|length == 0 %}
+        <p>No widgets yet</p>
+    {% else %}  
+    <ul>
+        {% for widget in widgets %}
+        <li>{{ widget }}</li>
+        {% endfor %}
+    </ul>  
+   
+    {% endif %}
+    <hr>
+
+    <a href = "{% url 'add_widget' %}">Add a Widget</a>
+
+</body>
+</html>
